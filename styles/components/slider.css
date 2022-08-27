@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .slider-dot {
+    @apply rounded-full h-3 w-3 bg-slate-800 transition-all duration-500 cursor-pointer  hover:bg-gradient-to-r from-blue-700 to-blue-400;
+  }
+
+  .slider-dot--active{
+    @apply  w-16  h-3 bg-gradient-to-r from-blue-700 to-blue-400 ;
+  }
+  .slide{
+    @apply absolute top-0 left-0 flex w-full h-full flex-col gap-4 p-2  transition-all duration-500;
+  }
+
+}

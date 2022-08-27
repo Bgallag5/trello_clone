@@ -1,0 +1,153 @@
+.dropdown--backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, .25);
+    display: none;
+    opacity: 0%;
+    transition:  all .5s ease-in-out;
+    transition-delay: 1s;
+    z-index: 999;
+}
+
+.backdrop--active{
+    display: block;
+    opacity: 100%;
+    transition-delay: 1s;
+}
+
+.header-dropdown{
+    position: fixed;   
+    top: 4rem;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, .35);
+    overflow: hidden;
+    border-top: 2px solid black;
+    z-index: 1000;
+    transition: all .5s ease-in-out;
+    transform: translateY(-110%);
+}
+
+.header-dropdown > * {
+    z-index: 4;
+}
+
+.dropdown--active{
+    transform: translateY(0%);
+    transition: all .5s ease-in-out;
+    display: flex;
+    opacity: 100;
+}
+
+
+.dropdown-content{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    opacity: 0;
+    visibility: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    color: #333;
+    transition: opacity .3s ease-in-out;
+}
+
+.content-active{
+    display: grid;
+    opacity: 100;
+    visibility: visible;
+    transition: opacity .3s ease-in-out;
+}
+
+.dropdown__text{
+    font-size: .85rem;
+    color: #666;
+    width: 95%;
+}
+
+.dropdown__header{
+    font-weight: 500;
+    color: black;
+    padding-bottom: 10px;
+    width: 75%;
+    height: 2.5rem;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+}
+
+/* Left Side */
+
+.dropdown-left{
+    /* width: 75%; */
+    display: grid;
+    /* create 3 columns each with 1fr width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: .3rem;
+    padding: 2rem 1rem;
+    width: 75%;
+    justify-self:right;
+}
+
+.left-box{
+    height: auto;
+    min-height: 6rem;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 2px;
+    margin: 3px;
+    /* outline: 1px solid red; */
+}
+
+
+.grid-col-span-3{
+    /* within a grid-col, span 3 column widths (here: 100%) */
+    grid-column: span 3;
+}
+
+.left-box--text{
+    grid-column: span 2;
+}
+
+
+/* Right Side */
+.dropdown-right{
+    /* width: 25%; */
+    display: grid;
+    grid-template-rows: 2.5rem auto 5rem;
+    gap: .3rem;
+    padding: 2rem 1rem;
+    padding-right: 25%;
+    /* align-items: center; */
+}
+
+.right-box{
+    width: 100%;
+}
+
+.right-box--btn{
+    height: 3.5rem;
+    width: auto;
+    background-color: white;
+    border: 1px solid rgb(77, 0, 128);
+    padding: .3rem;
+    border-radius: .3rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.right-box--btn:hover{
+    background-color: rgb(183, 157, 255);
+}

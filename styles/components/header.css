@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    .nav-item{
+        @apply cursor-pointer gap-[2px] tracking-wider w-auto h-full text-blueDark flex flex-row items-center;
+    }
+}
+
+.header{
+    z-index: 1001 !important;
+    transform: translateX(0%);
+}
+
+.header, .header > * {
+    z-index: 1001 !important;
+}
+
+.dropdown-carrot{
+    pointer-events: none;
+}
+
+.nav-item--active{
+    border-bottom:  2px solid blue;
+    color: blue;
+}

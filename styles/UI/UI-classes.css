@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    /* UI */
+    .btn{
+        @apply cursor-pointer;
+    }
+    .btn-blue{
+        @apply bg-blue-600 text-white text-sm font-[500] px-5 rounded-[5px] h-10 text-center hover:bg-blue-800 transition-all duration-300;
+    }
+    .btn-white{
+        @apply bg-white text-black text-sm font-[500] px-5 rounded-[5px] h-10 text-center hover:bg-slate-300 transition-all duration-300;
+    }
+    .section{
+        @apply max-w-[75rem] w-[80rem] h-auto flex mx-auto;
+    }
+
+
+    /* Components */
+    .about-item{
+        @apply  w-1/3 h-full flex flex-row gap-6 items-start relative;
+    }
+    .content-visible{
+        @apply !h-64 !opacity-100 !visible transition-all duration-500 ease-in-out;
+    }
+
+
+
+
+    /* TYPOGRAPHY */
+    .text-header{
+        @apply text-3xl text-black font-[500];
+    }
+    .text-subheader{
+        @apply text-lg font-semibold;
+    }
+
+    .text-regular{
+        @apply text-base text-black font-medium tracking-wider;
+    }
+    .text-regular-light{
+        @apply text-base text-slate-600 font-medium tracking-wider;
+    }
+    .text-small{
+        @apply text-[.9rem] text-blueDark font-[500] tracking-wide;
+    }
+    .text-footer-head{
+        @apply text-base font-semibold tracking-wide mb-4;
+    }
+    .text-footer{
+        @apply text-xs tracking-wide;
+    }
+}
