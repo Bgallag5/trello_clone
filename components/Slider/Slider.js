@@ -85,10 +85,10 @@ export default function Slider() {
     <div
       ref={sliderRef}
       id={'slider'}
-      className="w-full h-[35rem] bg-indigo-100 flex flex-col items-center justify-center "
+      className="w-full h-[38rem] bg-indigo-100 flex flex-col items-center justify-center "
     >
-      <div className="flex overflow-x-hidden flex-row w-1/2 h-12 items-center gap-4 justify-end">
-        <div className="h-full flex flex-row gap-3 w-auto items-center">
+      <div className="flex  overflow-x-hidden flex-row w-1/2 h-12 items-center gap-4 justify-end">
+        <div className="h-full  flex flex-row gap-3 w-auto items-center">
           <div
             onClick={() => handleSetSlide(1)}
             className={`slider-dot ${

@@ -23,7 +23,9 @@
     top: 4rem;
     left: 0;
     width: 100vw;
-    height: 50vh;
+    /* height: 50vh; */
+    min-height: 25rem;
+    height: auto;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -70,7 +72,8 @@
 }
 
 .dropdown__text{
-    font-size: .85rem;
+    font-size: .75rem;
+    line-height: 1.2rem;
     color: #666;
     width: 95%;
 }
@@ -82,13 +85,11 @@
     width: 75%;
     height: 2.5rem;
     border-bottom: 1px solid grey;
-    margin-bottom: 1rem;
 }
 
 /* Left Side */
 
 .dropdown-left{
-    /* width: 75%; */
     display: grid;
     /* create 3 columns each with 1fr width */
     grid-template-columns: repeat(3, 1fr);
@@ -100,12 +101,16 @@
 
 .left-box{
     height: auto;
-    min-height: 6rem;
+    min-height: 4rem;
+    max-height: 8rem;
     display: grid;
     grid-template-columns: 15% 85%;
-    padding: 2px;
-    margin: 3px;
+    margin: 5px;
     /* outline: 1px solid red; */
+    cursor: pointer;
+    padding: .5rem;
+    transition:  all .3s ease-in-out;
+    border-radius: .3rem;
 }
 
 
@@ -114,14 +119,24 @@
     grid-column: span 3;
 }
 
+
 .left-box--text{
     grid-column: span 2;
+    margin: 0;
+}
+
+.left-box--title{
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.left-box--icon{
+    width: 1rem;
 }
 
 
 /* Right Side */
 .dropdown-right{
-    /* width: 25%; */
     display: grid;
     grid-template-rows: 2.5rem auto 5rem;
     gap: .3rem;
@@ -135,19 +150,20 @@
 }
 
 .right-box--btn{
-    height: 3.5rem;
+    height: 2.75rem;
     width: auto;
+    min-width: 8rem;
     background-color: white;
     border: 1px solid rgb(77, 0, 128);
     padding: .3rem;
     border-radius: .3rem;
     color: black;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 500;
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
 
 .right-box--btn:hover{
-    background-color: rgb(183, 157, 255);
+    background-color: rgb(183, 157, 255, .25);
 }

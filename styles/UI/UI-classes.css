@@ -53,4 +53,5 @@
     .text-footer{
         @apply text-xs tracking-wide;
     }
+
 }

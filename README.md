@@ -1,6 +1,6 @@
 #Trello Copy
 
-GitHub: 
+GitHub: https://github.com/Bgallag5/trello_clone
 
 Deployed: 
 
