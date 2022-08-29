@@ -14,7 +14,7 @@ export default function Hero() {
                 <input type={'email'} placeholder={"Email"} className="w-3/5  text-sm rounded-md border focus:border-slate-700 border-slate-300 px-3 placeholder:text-slate-600 outline-none"></input>
                 <button className='btn btn-blue w-1/5'>Sign Up</button>
             </div>
-            <span className='h-8 relative flex w-full flex-row items-center gap-2 text-blue cursor-pointer'><p className=' underline'>Watch Video</p><FontAwesomeIcon className='w-3 h-3' icon={faPlay} /> </span>
+            <span className='h-8 relative flex w-32 flex-row items-center gap-2 text-blue cursor-pointer'><p className=' underline'>Watch Video</p><FontAwesomeIcon className='w-3 h-3' icon={faPlay} /> </span>
         </div>
         <div className="hero-img h-[50vh] bg-cover w-96 relative">
             <Image className='object-contain' layout='fill' alt='hero' src={require('../../public/images/hero.webp')}/>
