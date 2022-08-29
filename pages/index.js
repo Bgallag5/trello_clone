@@ -9,6 +9,7 @@ import Features from '../components/Features/Features';
 import CTA from '../components/CTA/CTA';
 import Slider from '../components/Slider/Slider';
 import Footer from '../components/Footer/Footer';
+// import Spinner from '../components/Spinner/Spinner';
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Features />
       <Slider />
       <CTA />
+      {/* <Spinner/> */}
       <Footer />
     </div>
   );

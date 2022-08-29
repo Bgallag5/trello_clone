@@ -8,6 +8,7 @@
 @import './UI/UI-classes.css';
 @import './components/slider.css';
 @import './components/headerdropdown.css';
+@import './components/spinner.css';
 
 /* clean reset */
 *,

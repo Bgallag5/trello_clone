@@ -1,6 +1,22 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAreaChart, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAreaChart,
+  faArrowRight,
+  faBullhorn,
+  faBullseye,
+  faChartBar,
+  faPencil,
+  faHomeLgAlt,
+  faStore,
+  faScaleUnbalanced,
+  faChessPawn,
+  faUsersViewfinder,
+  faMoneyCheck,
+  faPowerOff,
+  faBuilding,
+  faBuildingColumns,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function HeaderDropdown(props) {
   const { tab, dropdownVisible } = props;
@@ -22,7 +38,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-blue-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faUsersViewfinder}
             ></FontAwesomeIcon>
             <p className="left-box--title">Views</p>
             <p className="left-box--text dropdown__text">
@@ -32,7 +48,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-green-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faMoneyCheck}
             ></FontAwesomeIcon>
             <p className="left-box--title">Automation</p>
             <p className="left-box--text dropdown__text">
@@ -42,7 +58,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-red-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faPowerOff}
             ></FontAwesomeIcon>
             <p className="left-box--title">Power-Ups</p>
             <p className="left-box--text dropdown__text">
@@ -64,7 +80,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-orange-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faBullhorn}
             ></FontAwesomeIcon>
             <p className="left-box--title">Integrations</p>
             <p className="left-box--text dropdown__text">
@@ -94,13 +110,12 @@ export default function HeaderDropdown(props) {
       >
         <div className="dropdown-left  left-box--text">
           <p className="dropdown__header grid-col-span-3">
-            Take a page out of these pre-built Trello playbooks designed for all
-            teams
+            Take a page out of these pre-built Trello playbooks
           </p>
           <div className="left-box hover:bg-blue-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faBullseye}
             ></FontAwesomeIcon>
             <p className="left-box--title">Marketing teams</p>
             <p className="left-box--text dropdown__text">
@@ -111,7 +126,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-green-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faScaleUnbalanced}
             ></FontAwesomeIcon>
             <p className="left-box--title">Product Management</p>
             <p className="left-box--text dropdown__text">
@@ -122,7 +137,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-red-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faChartBar}
             ></FontAwesomeIcon>
             <p className="left-box--title">Engineering teams</p>
             <p className="left-box--text dropdown__text">
@@ -133,7 +148,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-violet-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faPencil}
             ></FontAwesomeIcon>
             <p className="left-box--title">Design teams</p>
             <p className="left-box--text dropdown__text">
@@ -144,7 +159,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-orange-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faChessPawn}
             ></FontAwesomeIcon>
             <p className="left-box--title">Startups</p>
             <p className="left-box--text dropdown__text">
@@ -155,7 +170,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box hover:bg-teal-100">
             <FontAwesomeIcon
               className="left-box--icon text-sm w-4"
-              icon={faAreaChart}
+              icon={faHomeLgAlt}
             ></FontAwesomeIcon>
             <p className="left-box--title">Remote teams</p>
             <p className="left-box--text dropdown__text">
@@ -191,32 +206,27 @@ export default function HeaderDropdown(props) {
             </div>
             <div className="flex flex-col w-full ">
               <span className="flex flex-row gap-2 group cursor-pointer pt-2">
-                <h2 className="left-box--title">
-                  Use Case: Project Management
-                </h2>
+                <h2 className="left-box--title">Use Case: Brainstorming</h2>
                 <FontAwesomeIcon
                   className="text-blue-500 left-box--icon invisible group-hover:visible transition-all duration-100"
                   icon={faArrowRight}
                 />{' '}
               </span>
               <p className="dropdown__text">
-                Keep tasks in order, deadlines on track, and team members
-                aligned with Trello.
+                Unleash your teams creativity and keep your ideas visible,
+                collaborative, and actionable.
               </p>
             </div>
             <div className="flex flex-col w-full ">
               <span className="flex flex-row gap-2 group cursor-pointer pt-2">
-                <h2 className="left-box--title">
-                  Use Case: Project Management
-                </h2>
+                <h2 className="left-box--title">Use Case: Meetings</h2>
                 <FontAwesomeIcon
                   className="text-blue-500 left-box--icon invisible group-hover:visible transition-all duration-100"
                   icon={faArrowRight}
                 />{' '}
               </span>
               <p className="dropdown__text">
-                Keep tasks in order, deadlines on track, and team members
-                aligned with Trello.
+                Empower your team to be more productive, and have fun.
               </p>
             </div>
           </div>
@@ -239,7 +249,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box h-32 bg-cyan-50">
             <FontAwesomeIcon
               className="left-box--icon text-cyan-400 text-sm w-4"
-              icon={faAreaChart}
+              icon={faStore}
             ></FontAwesomeIcon>
             <p className="left-box--title">Standard</p>
             <p className="left-box--text dropdown__text">
@@ -249,7 +259,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box bg-pink-50">
             <FontAwesomeIcon
               className="left-box--icon text-sm text-pink-400 w-4"
-              icon={faAreaChart}
+              icon={faBuilding}
             ></FontAwesomeIcon>
             <p className="left-box--title">Premium</p>
             <p className="left-box--text dropdown__text">
@@ -260,7 +270,7 @@ export default function HeaderDropdown(props) {
           <div className="left-box bg-blue-50">
             <FontAwesomeIcon
               className="left-box--icon text-sm text-blue-600 w-4"
-              icon={faAreaChart}
+              icon={faBuildingColumns}
             ></FontAwesomeIcon>
             <p className="left-box--title">Enterprise</p>
             <p className="left-box--text dropdown__text">
@@ -308,3 +318,5 @@ export default function HeaderDropdown(props) {
     </div>
   );
 }
+
+// megphone, pencil, web, code, calendar, tab,
