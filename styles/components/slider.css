@@ -13,5 +13,8 @@
   .slide{
     @apply absolute top-0 left-0 flex w-full h-full flex-col gap-4 p-2  transition-all duration-500;
   }
+  /* .btn-disabled{
+    @apply  ;
+  } */
 
 }

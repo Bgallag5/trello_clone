@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faQuoteLeft, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Slider() {
   const [activeSlide, setActiveSlide] = useState(1);
+  const [sliderPaused, setSliderPaused] = useState(false)
   let sliderPauseRef = useRef(false);
   const sliderRef = useRef();
   let slides;
@@ -26,7 +27,7 @@ export default function Slider() {
   function handleBtnClick(e) {
     let offset = Number(e?.target.dataset.offset) || 1;
 
-    if (slides.length <= activeSlide && offset === 1) {
+    if (slides?.length <= activeSlide && offset === 1) {
       setActiveSlide(1);
       return;
     }
@@ -49,13 +50,13 @@ export default function Slider() {
   const autoScrollSlider = () => {
     setTimeout(() => {
       if (sliderPauseRef.current) return;
-      if (slides.length <= activeSlide) {
-        handleBtnClick();
-        return;
-      }
+      // if (slides?.length <= activeSlide) {
+      //   handleBtnClick();
+      //   return;
+      // }
       if (sliderPauseRef.current) return;
       handleBtnClick();
-    }, 5000);
+    }, 2000);
   };
 
   //continually run autoscroll unless it is paused
@@ -66,20 +67,26 @@ export default function Slider() {
   }, [activeSlide]);
 
   //add hover event listeners to pause slider auto-scrolling
-  useEffect(() => {
-    sliderRef.current.addEventListener('mouseover', () => {
-      sliderPauseRef.current = true;
-      return;
-    });
+  // useEffect(() => {
+  //   sliderRef.current.addEventListener('mouseover', () => {
+  //     sliderPauseRef.current = true;
+  //     return;
+  //   });
 
-    sliderRef.current.addEventListener('mouseleave', () => {
-      console.log('out');
-      sliderPauseRef.current = false;
-      //restart auto scroll
-      autoScrollSlider();
-      return;
-    });
-  }, []);
+  //   sliderRef.current.addEventListener('mouseleave', () => {
+  //     console.log('out');
+  //     sliderPauseRef.current = false;
+  //     //restart auto scroll
+  //     autoScrollSlider();
+  //     return;
+  //   });
+  // }, []);
+
+  function toggleSliderPause(){
+    sliderPauseRef.current = !sliderPauseRef.current;
+    setSliderPaused(prev => !prev)
+    autoScrollSlider();
+  }
 
   return (
     <div
@@ -115,16 +122,30 @@ export default function Slider() {
           ></div>
         </div>
         <button
+          onClick={(e) => toggleSliderPause(e)}
+          data-offset={-1}
+          className={`${sliderPaused && 'bg-black'} btn rounded-full shadow-md h-8 w-8  bg-white text-black flex rotate-90 justify-center text-2xl  ml-2 active:translate-y-[1px]  items-center`}
+        >
+         {sliderPaused ?
+           (
+            <FontAwesomeIcon className='text-white text-base h-3/4' icon={faCaretUp} />
+          ) :
+          <p className='text-3xl'>=</p>
+        }
+        </button>
+        <button
           onClick={(e) => handleBtnClick(e)}
           data-offset={-1}
-          className="btn rounded-full shadow-md h-8 w-8 bg-white text-black flex justify-center text-2xl ml-2 active:translate-y-[1px]  items-center"
+          disabled={!sliderPaused}
+          className={` btn rounded-full shadow-md h-8 w-8 bg-white text-black flex justify-center text-2xl ml-2 active:translate-y-[1px] disabled:opacity-50 disabled:active:translate-y-0  items-center`}
         >
           {'<'}
         </button>
         <button
           onClick={(e) => handleBtnClick(e)}
           data-offset={1}
-          className="btn rounded-full shadow-md h-8 w-8 bg-white text-black flex justify-center text-2xl active:translate-y-[1px] items-center "
+          disabled={!sliderPaused}
+          className={` btn rounded-full shadow-md h-8 w-8 bg-white text-black flex justify-center text-2xl active:translate-y-[1px] disabled:opacity-50 disabled:active:translate-y-0 items-center `}
         >
           {'>'}
         </button>
