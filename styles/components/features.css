@@ -1,0 +1,33 @@
+.read-more{
+    position: relative;
+    height: 2rem;
+    width: 8rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.read-more--input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.read-more--text{
+    height: 100%;
+    width: 100%;
+    width: 8rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.read-more--text::before{
+    content: '+ ';
+}
+
+
+.read-more--input:checked ~ .read-more--text::before{
+    content: "- ";
+}

@@ -3,11 +3,12 @@ import Image from 'next/image';
 
 export default function Feature(props) {
   const { head, title, text, src, classList } = props;
+  let checkboxRef = useRef()
 
   //show hidden content of a specific element
   const showHiddenContent = (e) => {
-    let hiddenDiv = e.target.parentNode.lastElementChild;
-
+    let hiddenDiv = e.target.closest(".read-more").nextElementSibling;
+console.log(hiddenDiv);
     if (hiddenDiv.classList.contains('content-visible')) {
       hiddenDiv.classList.remove('content-visible');
       return;
@@ -29,12 +30,16 @@ export default function Feature(props) {
         <h1 className="text-header text-blueDark mb-4">{title}</h1>
         <p className="text-regular-light  leading-6">{text}</p>
         <div className="h-auto mt-[10%]">
-          <span
+          {/* <span
             onClick={(e) => showHiddenContent(e)}
             className="w-auto cursor-pointer text-lg font-[600] text-blueDark"
           >
             + Learn More
-          </span>
+          </span> */}
+          <div onChange={(e) => showHiddenContent(e)} className='read-more'>
+            <input ref={checkboxRef} type="checkbox" className="read-more--input" />
+            <p className='read-more--text text-blueDark'>Read More</p>
+          </div>
           <div
             id="hidden-content"
             className="learn-more--content w-full opacity-0 flex flex-col gap-4  h-0 transition-all duration-500 text-[1rem] font-[400]"
